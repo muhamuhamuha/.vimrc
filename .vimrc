@@ -21,6 +21,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'valloric/youcompleteme'
 Plug 'yggdroot/indentline'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'majutsushi/tagbar'
@@ -34,7 +36,7 @@ syntax on
 
 if need_to_install_plugins == 1
     echo "Installing plugins..."
-    silent! PlugInstall
+   silent! PlugInstall
     echo "Done!"
     q
 endif
