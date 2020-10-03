@@ -8,12 +8,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-" js-specific
 Plug 'morhetz/gruvbox'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
-
-" original
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'tmhedberg/simpylfold'
@@ -83,6 +83,14 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
+
+" emmet-vim
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+    \ 'javascript.jsx' : {
+      \    'extends' : 'jsx',
+      \  },
+    \}
 
 " word movement
 imap <S-Left> <Esc>bi
