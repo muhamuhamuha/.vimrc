@@ -79,10 +79,10 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
 
 " fullstack editing
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
-    \ set shiftwidth=2
+    \ set shiftwidth=2 |
 
 " emmet-vim
 let g:user_emmet_leader_key='<Tab>'
@@ -168,6 +168,7 @@ function ToggleWrap()
         inoremap <buffer> <silent> <End>  <C-o>g<End>
     endif
 endfunction
+
 
 " move through split windows
 nnoremap <C-J> <C-W><C-J>
