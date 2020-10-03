@@ -8,6 +8,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+" js-specific
+Plug 'morhetz/gruvbox'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'tpope/vim-fugitive'
+
+" original
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'tmhedberg/simpylfold'
@@ -17,11 +23,12 @@ Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'valloric/youcompleteme'
 Plug 'yggdroot/indentline'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'ntpeters/vim-better-whitespace'
@@ -29,6 +36,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 filetype plugin indent on
@@ -57,7 +65,7 @@ set number
 
 " sane text files
 set fileformat=unix
-set encoding=utf-8
+set encoding=UTF-8
 set fileencoding=utf-8
 set colorcolumn=80
 set viminfo='25,\"50,n~/.viminfo
@@ -74,7 +82,7 @@ au BufNewFile,BufRead *.py
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
-    \ set shiftwidth=2 
+    \ set shiftwidth=2
 
 " word movement
 imap <S-Left> <Esc>bi
@@ -188,6 +196,30 @@ function! StartUp()
     end
 endfunction
 autocmd VimEnter * call StartUp()
+
+"nerdtree-git-plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusShowClean = 1
+
+" git-gutter
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '-'
+let g:gitgutter_sign_modified_removed = '-'
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion=1
