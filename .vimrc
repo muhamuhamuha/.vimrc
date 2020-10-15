@@ -17,7 +17,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'tmhedberg/simpylfold'
-Plug 'scrooloose/nerdcommenter'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
@@ -28,7 +27,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'valloric/youcompleteme'
 Plug 'yggdroot/indentline'
-Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/syntastic'
 Plug 'ntpeters/vim-better-whitespace'
@@ -94,9 +92,9 @@ let g:user_emmet_settings = {
 
 " word movement
 imap <S-Left> <Esc>bi
-nmap <S-Left> b
+map <S-Left> v<S-->
 imap <S-Right> <Esc><Right>wi
-nmap <S-Right> w
+map <S-Right> v<S-4>
 
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
@@ -226,9 +224,9 @@ let g:NERDTreeGitStatusShowClean = 1
 " git-gutter
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '✹'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '-'
-let g:gitgutter_sign_modified_removed = '-'
+let g:gitgutter_sign_removed = '➖'
+let g:gitgutter_sign_removed_first_line = '➖'
+let g:gitgutter_sign_modified_removed = '➖'
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion=1
