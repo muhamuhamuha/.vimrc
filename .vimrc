@@ -25,10 +25,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jmcantrell/vim-virtualenv'
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
+Plug 'justinmk/vim-sneak'
 Plug 'yggdroot/indentline'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/indentpython.vim'
@@ -96,6 +97,9 @@ map <S-Left> v<S-->
 imap <S-Right> <Esc><Right>wi
 map <S-Right> v<S-4>
 
+" window pane movement
+nmap <leader>w <C-w>
+
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
 imap <S-Tab> <Esc><<i
@@ -137,7 +141,7 @@ let g:SimpylFold_docstring_preview=1
 
 " wrap toggle
 setlocal nowrap
-noremap <silent> <Leader>w :call ToggleWrap()<CR>
+noremap <silent> <leader>r :call ToggleWrap()<CR>
 function ToggleWrap()
     if &wrap
         echo "Wrap OFF"
@@ -229,18 +233,18 @@ let g:gitgutter_sign_removed_first_line = '➖'
 let g:gitgutter_sign_modified_removed = '➖'
 
 " youcompleteme
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-map <leader>s :SyntasticCheck<CR>
-map <leader>d :SyntasticReset<CR>
-map <leader>e :lnext<CR>
-map <leader>r :lprev<CR>
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"map <leader>s :SyntasticCheck<CR>
+"map <leader>d :SyntasticReset<CR>
+"map <leader>e :lnext<CR>
+"map <leader>r :lprev<CR>
 
 " tag list
 map <leader>t :TagbarToggle<CR>
@@ -263,3 +267,4 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+inoremap jj <ESC>
