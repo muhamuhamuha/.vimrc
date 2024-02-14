@@ -8,6 +8,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+Plug 'wellle/context.vim'
 Plug 'morhetz/gruvbox'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
@@ -18,6 +19,7 @@ Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'tmhedberg/simpylfold'
 Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -47,6 +49,7 @@ if need_to_install_plugins == 1
     echo "Done!"
     q
 endif
+
 
 " set splits
 set splitbelow
@@ -124,12 +127,19 @@ endfunction
 " color scheme
 syntax on
 colorscheme onedark
+" ayu settings
+set termguicolors
+"let ayucolor="mirage"
+"colorscheme ayu
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=darkmagenta
 filetype on
 filetype plugin indent on
 
 " lightline
 set noshowmode
 let g:lightline = { 'colorscheme': 'onedark' }
+" let g:lightline = { 'colorscheme': 'ayu' }
 
 " code folding
 set foldmethod=indent
@@ -267,4 +277,5 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-inoremap jj <ESC>
+inoremap jk <ESC>
+
