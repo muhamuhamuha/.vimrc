@@ -276,6 +276,9 @@ function! XTermPasteBegin()
     return ""
 endfunction
 
+" Disable auto-rendering of some markdown syntax
+let g:markdown_syntax_conceal = 0
+
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 inoremap jk <ESC>
 
